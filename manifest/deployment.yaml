@@ -15,20 +15,5 @@ spec:
         app: go-server-ci
     spec:
       containers:
-      - image: m20086/go-server-ci
+      - image: docker pull ghcr.io/2023-4400-exp/4424-go-server-ci:d291508653b1bacc86d955c0dcfc811a03c07c89@sha256:1b6f82132f8ec947c1675932224a564d75f084e9b2c94d9570660e5427c6589f
         name: go-server-ci
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: go-server-ci
-  name: go-server-ci
-spec:
-  ports:
-  - port: 8080
-    protocol: TCP
-    targetPort: 8080
-  selector:
-    app: go-server-ci
-  type: NodePort
